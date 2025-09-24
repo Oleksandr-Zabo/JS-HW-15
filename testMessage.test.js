@@ -4,13 +4,11 @@ describe('Cipher class', () => {
     test('should create a Cipher instance with correct properties', () => {
         const cipher = new Cipher();
         expect(cipher.massages).toEqual([]);
-        expect(cipher.key).toBe(1);
     });
 
     test('should create a Cipher instance with initial messages', () => {
         const cipher = new Cipher(["Hello", "Привіт"]);
         expect(cipher.massages).toEqual(["Hello", "Привіт"]);
-        expect(cipher.key).toBe(1);
     });
 
     test('should add a message', () => {

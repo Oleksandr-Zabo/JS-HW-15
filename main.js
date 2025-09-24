@@ -1,6 +1,5 @@
 class Cipher {
     massages = [];
-    key = 1;
 
     constructor(massages = []) {
         this.massages = massages;
@@ -10,7 +9,7 @@ class Cipher {
         this.massages.push(massage);
     }
 
-    encodeAll(key=1) {// шифрування зсувом букви на 1, але лише букв латинського чи кириличного алфавіту
+    encodeAll(key=1) {// шифрування зсувом букви на 1
         return this.massages.map(massage => {
             return massage.split('').map(char => {
                 if (char >= 'a' && char <= 'z') {
@@ -28,7 +27,7 @@ class Cipher {
         });
     }
 
-    decodeAll(key=1) {// дешифрування зсувом букви на 1, але лише букв латинського чи кириличного алфавіту
+    decodeAll(key=1) {// дешифрування зсувом букви на 1
         return this.massages.map(massage => {
             return massage.split('').map(char => {
                 if (char >= 'a' && char <= 'z') {
@@ -50,7 +49,6 @@ class Cipher {
 // Function to initialize the DOM demo (only run when in browser)
 function initializeDemo() {
     if (typeof document !== 'undefined') {
-        // Приклад використання класу
         const cipher = new Cipher();
         cipher.addMassage("Hello, World!");
         cipher.addMassage("Привіт, Світ!");
